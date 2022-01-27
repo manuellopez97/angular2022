@@ -1,0 +1,29 @@
+<div class="card" style="width: 10rem;">
+    <img src="{{car.img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">
+        {{car.fab}} {{car.mod}}
+        <span class="badge bg-primary rounded-pill">{{car.stock}}</span>
+        <button
+            (click)="buyCar()"
+            [ngClass]="{
+                        'btn-danger':!car.stock,
+                        'disabled':!car.stock
+                       }"
+            class="btn btn-primary">{{car.stock?'Comprar':'Sin stock'}}</button>
+            <button  (click)="eliminarCoche()" class="btn btn-danger">X</button>
+
+        <!-- <button
+            (click)="buyCar()"
+            *ngIf="car.stock else sinstock"
+            class="btn btn-primary">Comprar</button>
+
+        <ng-template #sinstock>
+            <button
+                class="btn btn-danger disabled">Sin stock</button>
+        </ng-template> -->
+
+
+      </p>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<ul class="list-group list-group-horizontal">
+    <ng-container *ngFor="let a of getAlumnos()">
+      <!--<li *ngIf="a.age>=18"> {{a.name}}, {{a.age}} años </li>-->
+      <app-alumno-ficha [alumnoParam]="a"></app-alumno-ficha>
+    </ng-container>
+</ul>

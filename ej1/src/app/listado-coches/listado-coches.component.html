@@ -1,0 +1,15 @@
+<h2>Listado coches</h2>
+<div class="row">
+    <ng-container *ngFor="let coche of getCoches()">
+        <app-car-card [car]="coche"
+                      (carBought)="reduceStock($event)"
+                      *ngIf="!filtrar || (filtrar && coche.stock)">
+        </app-car-card>
+    </ng-container>
+</div>
+<input id="filtroStock" type="checkbox" (change)="cbChanged()">
+<label for="filtroStock">Filtrar por stock</label>
+<button class="btn btn-primary" (click)="recuperarCoches()">Recuperar Coches</button>
+<button class="btn btn-danger" (click)="recuperaStock()">Recuperar Stock</button>
+
+
