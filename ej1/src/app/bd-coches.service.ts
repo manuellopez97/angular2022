@@ -15,9 +15,9 @@ export class BdCochesService {
     } else {
       console.log("else")
       this.coches = new Array()
-      this.coches.push({id:25,fab:"Toyota",mod:"Auris",stock:2,img:""})
-      this.coches.push({id:18,fab:"Ford",mod:"Mustang",stock:3,img:""})
-      this.coches.push({id:33,fab:"Tesla",mod:"Cybertruck",stock:1,img:""})
+      this.coches.push({id:25,fab:"Toyota",mod:"Auris",stock:2,img:"https://periodismodelmotor.com/wp-content/uploads/2020/02/Ford-Mustang-Shelby-GT350-de-Fathouse-1.jpg"})
+      this.coches.push({id:18,fab:"Ford",mod:"Mustang",stock:3,img:"https://images1.autocasion.com/unsafe/1200x900/actualidad/wp-content/uploads/2021/04/seat-ibiza-2021-1.jpg"})
+      this.coches.push({id:33,fab:"Tesla",mod:"Cybertruck",stock:1,img:"https://images1.autocasion.com/unsafe/1200x900/actualidad/wp-content/uploads/2021/04/seat-ibiza-2021-1.jpg"})
       this.bdLocal.setItem("coches", JSON.stringify(this.coches) )
     }
    }
@@ -42,7 +42,7 @@ export class BdCochesService {
                      precio: 20000,
                      stock:3,
                      id:0,
-                    imagen:"https://periodismodelmotor.com/wp-content/uploads/2020/02/Ford-Mustang-Shelby-GT350-de-Fathouse-1.jpg"})
+                    img:"https://periodismodelmotor.com/wp-content/uploads/2020/02/Ford-Mustang-Shelby-GT350-de-Fathouse-1.jpg"})
 
 
     this.coches.push({fabricante: "Seat",
@@ -50,14 +50,14 @@ export class BdCochesService {
                      modelo:"Ibiza",
                      stock:2,
                      id:1,
-                    imagen:"https://images1.autocasion.com/unsafe/1200x900/actualidad/wp-content/uploads/2021/04/seat-ibiza-2021-1.jpg"})
+                    img:"https://images1.autocasion.com/unsafe/1200x900/actualidad/wp-content/uploads/2021/04/seat-ibiza-2021-1.jpg"})
 
     this.coches.push({fabricante: "Porsche",
                      precio: 10000,
                      modelo:"Panamera",
                      stock:1,
                      id:2,
-                    imagen:"https://www.autofacil.es/wp-content/uploads/2021/05/Porsche-Panamera_Turbo_S_E-Hybrid_Executive-2021-1600-02.jpg"})
+                    img:"https://www.autofacil.es/wp-content/uploads/2021/05/Porsche-Panamera_Turbo_S_E-Hybrid_Executive-2021-1600-02.jpg"})
                     this.saveCarsOnLocalStorage()
 
   }

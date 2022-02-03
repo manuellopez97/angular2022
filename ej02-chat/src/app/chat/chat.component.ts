@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BdChatService } from '../bd-chat.service';
 
 @Component({
   selector: 'app-chat',
@@ -6,49 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-  private chat
 
-  constructor() {
-    this.chat = [
-      {
-          author: "Luismi",
-          text: "Hola, Fernando, qué tal con Symfony?",
-          time: "19/01/2022 8:15",
-          votes: 0,
-          id:0
-      },
-      {
-          author: "Fernando",
-          text: "Hey, pues ya sabes, voy en coche-cama",
-          time: "19/01/2022 9:10",
-          votes: 0,
-          id: 1
-      },    {
-          author: "Luismi",
-          text: "Hazme una API REST para extraer datos de películas",
-          time: "19/01/2022 9:28",
-          votes: 0,
-          id: 2
-      },
-      {
-          author: "Fernando",
-          text: "Mejor te hago un hospital y ya si eso te adaptas a mi BD",
-          time: "19/01/2022 10:43",
-          votes: 0,
-          id: 3
-      },
-  ]
+  constructor(private bdChat: BdChatService) {
+
   }
 
   ngOnInit(): void {
 
   }
-
   getMensaje(){
-    return this.chat
+    return this.bdChat.getMensaje()
   }
 
-  voteUp(id: number){
-    this.chat[id].votes++
+  insertar(author:string,text:string){
+    this.bdChat.insertNewMessage(author,text)
   }
 }

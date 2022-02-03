@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { BdChatService } from '../bd-chat.service';
 
 @Component({
   selector: 'app-mensaje',
@@ -8,8 +9,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class MensajeComponent implements OnInit {
 @Input() mensajes: any
-@Output() msgVoted= new EventEmitter<number>()
-  constructor() {
+  constructor(private bdChat: BdChatService) {
 
   }
 
@@ -17,9 +17,11 @@ export class MensajeComponent implements OnInit {
   }
 
   votar(){
-    //avisar al padre para que incremente el contado de votos
-    //de este mensaje sobre el que hemos hecho clic
-    this.msgVoted.emit(this.mensajes.id)
+    this.bdChat.voteUp(this.mensajes.id)
 
+  }
+
+  borrar(){
+    this.bdChat.borrarMsg(this.mensajes)
   }
 }

@@ -1,8 +1,9 @@
 <h1>Chat de Clase</h1>
 <ul class="lista">
 <ng-container *ngFor="let mensaje of getMensaje()">
-<app-mensaje [mensajes]="mensaje" (msgVoted)="voteUp($event)"></app-mensaje>
+<app-mensaje [mensajes]="mensaje"></app-mensaje>
 </ng-container>
 </ul>
-<input type="text" id="envio" placeholder="Mensaje">
-<input type="button" value="Enviar">
+<input #texto type="text" id="nombre" placeholder="Nombre">
+<input #autor type="text" id="envio" placeholder="Mensaje">
+<button (click)="insertar(autor.value,texto.value); texto.value=''">Enviar</button>
