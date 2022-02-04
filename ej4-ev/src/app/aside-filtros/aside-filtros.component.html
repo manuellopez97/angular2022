@@ -21,6 +21,9 @@
         <select class="form-control" id="fabList">
           <option value="0">(Elige un fabricante)</option>
           <!-- RELLENAR CON UN LISTADO DE TODOS LOS FABRICANTES -->
+          <ng-container *ngFor="let coche of getFabricante()">
+            <option value="{{coche.id}}">{{coche.text}}</option>
+          </ng-container>
         </select>
       </div>
       <div class="form-check">
@@ -45,6 +48,9 @@
         <select class="form-control" id="techList">
           <option value="0">(Elige una tecnología)</option>
           <!-- RELLENAR CON UN LISTADO DE TODOS LAS TECNOLOGÍAS -->
+          <ng-container *ngFor="let coche of getTecnologia()">
+            <option value="{{coche.id}}">{{coche.text}}</option>
+          </ng-container>
         </select>
       </div>
       <div class="form-check">

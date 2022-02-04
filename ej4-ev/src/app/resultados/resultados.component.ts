@@ -7,6 +7,7 @@ import { BdCochesService } from '../bd-coches.service';
   styleUrls: ['./resultados.component.css']
 })
 export class ResultadosComponent implements OnInit {
+  vistaTarjeta:boolean = true
 
   constructor(private bdCoches:BdCochesService) { }
 
@@ -16,5 +17,14 @@ export class ResultadosComponent implements OnInit {
   getCoches(){
     return this.bdCoches.getCoches()
   }
+
+  cambiarVista(){
+    this.vistaTarjeta = !this.vistaTarjeta
+  }
+  isCargando(){
+    return this.bdCoches.isCargando()
+  }
+
+
 
 }

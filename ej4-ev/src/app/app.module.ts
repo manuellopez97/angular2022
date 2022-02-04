@@ -9,6 +9,8 @@ import { ResultadosComponent } from './resultados/resultados.component';
 import { CocheTarjetaComponent } from './coche-tarjeta/coche-tarjeta.component';
 import { BdCochesService } from './bd-coches.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CocheFilaComponent } from './coche-fila/coche-fila.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     CabeceraComponent,
     AsideFiltrosComponent,
     ResultadosComponent,
-    CocheTarjetaComponent
+    CocheTarjetaComponent,
+    CocheFilaComponent
   ],
   imports: [
     BrowserModule,

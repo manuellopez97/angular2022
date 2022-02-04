@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BdCochesService } from '../bd-coches.service';
 
 @Component({
   selector: 'app-aside-filtros',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsideFiltrosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bdCoches:BdCochesService) { }
 
   ngOnInit(): void {
+  }
+
+  getFabricante(){
+    return this.bdCoches.getFabricante()
+  }
+
+  getTecnologia(){
+    return this.bdCoches.getFabricante()
   }
 
 }

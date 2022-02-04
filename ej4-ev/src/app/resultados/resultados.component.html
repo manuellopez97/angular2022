@@ -1,5 +1,22 @@
-<div class="row row-cols-md-5">
-  <ng-container *ngFor="let coche of getCoches()">
-    <app-coche-tarjeta></app-coche-tarjeta>
-  </ng-container>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
+  <button class="btn btn-info btn-sm" (click)="cambiarVista()">CAMBIAR VISTA</button>
 </div>
+
+
+  <div class="d-flex align-items-center" *ngIf="isCargando(); else noCargando">
+    <strong>Cargando coches...</strong>
+    <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+  </div>
+
+<ng-template #noCargando><div [ngClass]="{ 'row row-cols-md-5': vistaTarjeta,
+  'container': !vistaTarjeta}">
+<ng-container *ngFor="let coche of getCoches()">
+<app-coche-tarjeta [car]="coche" *ngIf="vistaTarjeta; else elseBlock"></app-coche-tarjeta>
+<ng-template #elseBlock><app-coche-fila [car] = "coche"></app-coche-fila></ng-template>
+<!-- <ng-container *ngIf="!vistaTarjeta">
+<app-coche-fila [car]="coche"></app-coche-fila>
+</ng-container> -->
+</ng-container>
+</div>
+</ng-template>
+
