@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BdCochesService } from '../bd-coches.service';
+import { ParamsFiltrosService } from '../params-filtros.service';
 
 @Component({
   selector: 'app-aside-filtros',
@@ -8,7 +9,7 @@ import { BdCochesService } from '../bd-coches.service';
 })
 export class AsideFiltrosComponent implements OnInit {
 
-  constructor(private bdCoches:BdCochesService) { }
+  constructor(private bdCoches:BdCochesService, private paramsFiltros:ParamsFiltrosService) { }
 
   ngOnInit(): void {
   }
@@ -18,7 +19,20 @@ export class AsideFiltrosComponent implements OnInit {
   }
 
   getTecnologia(){
-    return this.bdCoches.getFabricante()
+    return this.bdCoches.getTecnologia()
+  }
+  
+
+  setPatron(patron:string){
+    this.paramsFiltros.setPatron(patron)
+  }
+
+  setFab(fab:string){
+    this.paramsFiltros.setFab(fab)
+  }
+
+  setTec(tec:string){
+    this.paramsFiltros.setTec(tec)
   }
 
 }

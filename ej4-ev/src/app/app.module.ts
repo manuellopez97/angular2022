@@ -10,6 +10,10 @@ import { CocheTarjetaComponent } from './coche-tarjeta/coche-tarjeta.component';
 import { BdCochesService } from './bd-coches.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CocheFilaComponent } from './coche-fila/coche-fila.component';
+import { FiltroPatronPipe } from './filtro-patron.pipe';
+import { FiltroFabPipe } from './filtro-fab.pipe';
+import { FiltroTecPipe } from './filtro-tec.pipe';
+import { ParamsFiltrosService } from './params-filtros.service';
 
 
 @NgModule({
@@ -19,14 +23,17 @@ import { CocheFilaComponent } from './coche-fila/coche-fila.component';
     AsideFiltrosComponent,
     ResultadosComponent,
     CocheTarjetaComponent,
-    CocheFilaComponent
+    CocheFilaComponent,
+    FiltroPatronPipe,
+    FiltroFabPipe,
+    FiltroTecPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [BdCochesService],
+  providers: [BdCochesService, ParamsFiltrosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

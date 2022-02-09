@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BdCochesService } from '../bd-coches.service';
+import { ParamsFiltrosService } from '../params-filtros.service';
 
 @Component({
   selector: 'app-resultados',
@@ -9,7 +10,7 @@ import { BdCochesService } from '../bd-coches.service';
 export class ResultadosComponent implements OnInit {
   vistaTarjeta:boolean = true
 
-  constructor(private bdCoches:BdCochesService) { }
+  constructor(private bdCoches:BdCochesService, private paramsFiltros:ParamsFiltrosService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,16 @@ export class ResultadosComponent implements OnInit {
     return this.bdCoches.isCargando()
   }
 
+  getFab(){
+    return this.paramsFiltros.getFab()
+  }
+
+  getTec(){
+    return this.paramsFiltros.getTec()
+  }
+  getPatron(){
+    return this.paramsFiltros.getPatron()
+  }
 
 
 }

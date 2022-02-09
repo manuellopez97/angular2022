@@ -10,7 +10,7 @@
 
 <ng-template #noCargando><div [ngClass]="{ 'row row-cols-md-5': vistaTarjeta,
   'container': !vistaTarjeta}">
-<ng-container *ngFor="let coche of getCoches()">
+<ng-container *ngFor="let coche of getCoches() |filtroFab:getFab() | filtroTec:getTec() | filtroPatron:getPatron()">
 <app-coche-tarjeta [car]="coche" *ngIf="vistaTarjeta; else elseBlock"></app-coche-tarjeta>
 <ng-template #elseBlock><app-coche-fila [car] = "coche"></app-coche-fila></ng-template>
 <!-- <ng-container *ngIf="!vistaTarjeta">

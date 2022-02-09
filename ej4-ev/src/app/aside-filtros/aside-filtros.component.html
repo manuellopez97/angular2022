@@ -5,7 +5,7 @@
   <tbody>
     <tr><td>
       <div class="form-group">
-        <input type="text" class="form-control" id="modelo" placeholder="Nombre del modelo">
+        <input #patron type="text" class="form-control" id="modelo" placeholder="Nombre del modelo" (keyup)="setPatron(patron.value)">
       </div>
     </td></tr>
   </tbody>
@@ -18,11 +18,11 @@
     <tr><td>
       <div class="form-group">
         <label for="fabList">Elige un fabricante</label>
-        <select class="form-control" id="fabList">
+        <select #fab class="form-control" id="fabList" (change)="setFab(fab.value)">
           <option value="0">(Elige un fabricante)</option>
           <!-- RELLENAR CON UN LISTADO DE TODOS LOS FABRICANTES -->
-          <ng-container *ngFor="let coche of getFabricante()">
-            <option value="{{coche.id}}">{{coche.text}}</option>
+          <ng-container *ngFor="let fabricante of getFabricante()">
+            <option value="{{fabricante.id}}">{{fabricante.text}}</option>
           </ng-container>
         </select>
       </div>
@@ -45,11 +45,11 @@
     <tr><td>
       <div class="form-group">
         <label for="techList">Elige una tecnología</label>
-        <select class="form-control" id="techList">
+        <select #tec class="form-control" id="techList"(change)="setTec(tec.value)">
           <option value="0">(Elige una tecnología)</option>
           <!-- RELLENAR CON UN LISTADO DE TODOS LAS TECNOLOGÍAS -->
-          <ng-container *ngFor="let coche of getTecnologia()">
-            <option value="{{coche.id}}">{{coche.text}}</option>
+          <ng-container *ngFor="let tecnologia of getTecnologia()">
+            <option value="{{tecnologia.id}}">{{tecnologia.text}}</option>
           </ng-container>
         </select>
       </div>

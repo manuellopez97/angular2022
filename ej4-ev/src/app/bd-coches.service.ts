@@ -28,7 +28,7 @@ http.get(this.urlBase + 'fabricantes').subscribe(
 
 http.get(this.urlBase + 'tecnologias').subscribe(
   (response)=>{
-    this.fabricante = response
+    this.tecnologia = response
   }
 )
 
