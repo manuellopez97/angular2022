@@ -21,7 +21,7 @@ export class AsideFiltrosComponent implements OnInit {
   getTecnologia(){
     return this.bdCoches.getTecnologia()
   }
-  
+
 
   setPatron(patron:string){
     this.paramsFiltros.setPatron(patron)
@@ -35,4 +35,9 @@ export class AsideFiltrosComponent implements OnInit {
     this.paramsFiltros.setTec(tec)
   }
 
+  resetFilter(){
+    this.setPatron("")
+    this.setFab('0')
+    this.setTec('0')
+  }
 }

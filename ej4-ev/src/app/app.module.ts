@@ -14,6 +14,8 @@ import { FiltroPatronPipe } from './filtro-patron.pipe';
 import { FiltroFabPipe } from './filtro-fab.pipe';
 import { FiltroTecPipe } from './filtro-tec.pipe';
 import { ParamsFiltrosService } from './params-filtros.service';
+import { BuscadorComponent } from './buscador/buscador.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ParamsFiltrosService } from './params-filtros.service';
     CocheFilaComponent,
     FiltroPatronPipe,
     FiltroFabPipe,
-    FiltroTecPipe
+    FiltroTecPipe,
+    BuscadorComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
