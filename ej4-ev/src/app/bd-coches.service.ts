@@ -48,4 +48,9 @@ http.get(this.urlBase + 'tecnologias').subscribe(
   getTecnologia(){
     return this.tecnologia
   }
+
+  getCochesById(id:string){
+    return this.coches.find((coche:any) => coche.id == id)
+
+  }
 }

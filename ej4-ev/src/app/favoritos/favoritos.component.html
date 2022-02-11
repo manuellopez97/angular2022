@@ -1,0 +1,7 @@
+<app-nav-bar></app-nav-bar>
+<div class="row row-cols-md-5">
+<ng-container *ngFor="let coche of getFavs()">
+<app-coche-tarjeta [car]="coche" ></app-coche-tarjeta>
+</ng-container>
+</div>
+

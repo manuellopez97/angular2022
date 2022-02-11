@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FavoritosService } from '../favoritos.service';
 
 @Component({
   selector: 'app-coche-tarjeta',
@@ -7,9 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CocheTarjetaComponent implements OnInit {
   @Input() car:any
-  constructor() { }
+  constructor(private favs : FavoritosService) { }
 
   ngOnInit(): void {
+  }
+
+  addFav(id:string){
+    this.favs.addFav(id)
+  }
+
+  esFav(id:string){
+   return  this.favs.isFav(id)
   }
 
 }

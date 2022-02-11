@@ -16,6 +16,11 @@ import { FiltroTecPipe } from './filtro-tec.pipe';
 import { ParamsFiltrosService } from './params-filtros.service';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { HomeComponent } from './home/home.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FavoritosComponent } from './favoritos/favoritos.component';
+import { ContactosComponent } from './contactos/contactos.component';
+import { Page404Component } from './page404/page404.component';
+import { FavoritosService } from './favoritos.service';
 
 
 @NgModule({
@@ -30,14 +35,18 @@ import { HomeComponent } from './home/home.component';
     FiltroFabPipe,
     FiltroTecPipe,
     BuscadorComponent,
-    HomeComponent
+    HomeComponent,
+    NavBarComponent,
+    FavoritosComponent,
+    ContactosComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [BdCochesService, ParamsFiltrosService],
+  providers: [BdCochesService, ParamsFiltrosService, FavoritosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
