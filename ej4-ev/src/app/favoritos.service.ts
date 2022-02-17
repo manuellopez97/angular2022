@@ -4,13 +4,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FavoritosService {
-  private favs:string[] = []
+  private favs:string[] = new Array()
 
-  constructor() { }
+  constructor() {
+    if(localStorage.getItem("favs")){
+      this.favs = JSON.parse(localStorage.getItem("favs") as string)
+    }
+
+   }
 
   addFav(id:string){
     if(!this.favs.includes(id)){
       this.favs.push(id)
+      localStorage.setItem("favs",JSON.stringify(this.favs))
     }
     else{
       let posicion = this.favs.indexOf(id)
@@ -22,5 +28,9 @@ export class FavoritosService {
   getFavs(){return this.favs}
   isFav(id:string){
     return (this.favs.includes(id))
+  }
+
+  clearFavs(){
+
   }
 }
