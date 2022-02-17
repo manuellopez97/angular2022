@@ -1,0 +1,10 @@
+URL BASE
+http://api.openweathermap.org/data/2.5/weather?
+http://api.openweathermap.org/data/2.5/find?
+
+AÑADIR
+a)q=murcia
+b)id=123456
+
+API KEY
+8c5832bf6b14300069d047bd226c38ef
