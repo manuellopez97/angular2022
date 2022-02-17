@@ -15,19 +15,19 @@ export class BdCochesService {
     this.coches = new Array()
     this.fabricante = new Array()
     http.get(this.urlBase + 'coches').subscribe(
-      (response)=>{
+      (response:any)=>{
         this.coches = response
         this.cargando = false
       }
 )
 http.get(this.urlBase + 'fabricantes').subscribe(
-  (response)=>{
+  (response:any)=>{
     this.fabricante = response
   }
 )
 
 http.get(this.urlBase + 'tecnologias').subscribe(
-  (response)=>{
+  (response:any)=>{
     this.tecnologia = response
   }
 )

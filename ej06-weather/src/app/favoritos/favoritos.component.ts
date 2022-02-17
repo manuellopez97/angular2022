@@ -8,7 +8,6 @@ import { BdTiempoService } from '../bd-tiempo.service';
 })
 export class FavoritosComponent implements OnInit {
 private param:string = ''
-private tiempo:any = this.getUrl()
 
   constructor(private bdTiempo:BdTiempoService) {
   }
@@ -25,11 +24,8 @@ private tiempo:any = this.getUrl()
     return this.bdTiempo.getParam()
   }
 
-  getUrl():any{
-    return this.bdTiempo.getUrl()
-  }
-  getTiempo(){
-    return this.tiempo
+  getCiudad(){
+    return this.bdTiempo.getCiudades()
   }
 
 }
