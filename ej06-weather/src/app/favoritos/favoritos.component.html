@@ -1,1 +1,6 @@
-<input #ciudad type="text" placeholder="Nombre ciudad" (keyup)="setParam(ciudad.value)" (keyup.enter)="this.getCiudad()"><br>
+<input #ciudad type="text" placeholder="Nombre ciudad" (keyup)="setParam(ciudad.value)" (keyup.enter)="this.consulta()"><br>
+<div *ngIf="this.getCiudades()==null; else elseBlock">
+<h2>No hay datos todavía, cargando...</h2>
+</div>
+<ng-template #elseBlock>{{this.getCiudades().clouds | json}}</ng-template>
+<button (click)="borrar()">Borraar</button>
