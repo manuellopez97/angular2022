@@ -1,6 +1,19 @@
-<input #ciudad type="text" placeholder="Nombre ciudad" (keyup)="setParam(ciudad.value)" (keyup.enter)="this.consulta()"><br>
-<div *ngIf="this.getCiudades()==null; else elseBlock">
-<h2>No hay datos todavía, cargando...</h2>
+<h3>No hay datos todavía, inserte una ciudad</h3>
+<p>Inserte una ciudad</p>
+    <div class="input-group input-group-sm mb-3 reducir">
+      <input #ciudad type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  (keyup.enter)="this.getTiempo(ciudad.value)" placeholder="Elche">
+      <button (click)="this.getTiempo(ciudad.value)" type="button" class="btn btn-dark">Enviar</button>
+      </div>
+      <br>
+<div *ngIf="!getWeather(); else elseBlock"><br>
 </div>
-<ng-template #elseBlock>{{this.getCiudades().clouds | json}}</ng-template>
-<button (click)="borrar()">Borraar</button>
+<ng-template #elseBlock><br>
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title"*ngFor="let ciudad of getWeather()"> {{ciudad.name}}</h5>
+      <p><b>Elige una ciudad:</b></p>
+      <p class="card-text" *ngFor="let ciudad of getWeather()"> {{ciudad.dt}} </p>
+    </div>
+  </div>
+</ng-template>

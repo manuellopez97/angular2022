@@ -5,25 +5,20 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BdTiempoService {
-  private urlBase:string = 'http://api.openweathermap.org/data/2.5/weather?'
+  private urlBase:string = 'http://api.openweathermap.org/data/2.5/find?'
   private key:string = '8c5832bf6b14300069d047bd226c38ef'
-  private param:any
-  private ciudades:any
+  private weather:any
   constructor(private http:HttpClient) {}
 
-  getParam(){
-    return this.param
+  getTiempo(ciudad:any):any{
+  this.http.get(this.urlBase + 'q='+ciudad+'&appid='+this.key).subscribe(
+    (response:any)=>{
+       this.weather = response.list
+     }
+   )
   }
-  setParam(param:any){
-    this.param=param
-  }
-  consulta(){
-    this.http.get(this.urlBase + 'q='+this.getParam()+'&appid='+this.key).subscribe(
-      (response) =>{
-       this.ciudades = response
-      })
-  }
-  getCiudades(){
-    return this.ciudades
+
+  getWeather(){
+    return this.weather
   }
 }
