@@ -24,5 +24,9 @@ export class FavoritosComponent implements OnInit {
     return this.bdTiempo.getWeather()
   }
 
+  addFavs(ciudad:any){
+    this.bdTiempo.addFavs(ciudad)
+  }
+
   }
 

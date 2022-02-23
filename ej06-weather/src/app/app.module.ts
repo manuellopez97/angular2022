@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
+import { FavsComponent } from './favs/favs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    FavoritosComponent
+    FavoritosComponent,
+    FavsComponent
   ],
   imports: [
     BrowserModule,
