@@ -1,10 +1,11 @@
- <div *ngFor="let ciudad of getFavs()" class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="">
-    <div class="card-body">
+ <div *ngFor="let ciudad of getFavs()" class="card espaciado" style="width: 18rem;">
+    <img src="../../assets/images/icono-tiempo.png" class="card-img-top" alt="">
+    <div class="card-body center">
       <h5 class="card-title"> {{ciudad.name}}</h5>
-      <p class="card-text"> {{ciudad.dt}} </p>
+      <p class="card-text"> {{ciudad.main.temp | grados:ciudad.main.temp}} </p>
       <button (click)="setPrincipal(ciudad)" type="button" class="btn btn-info">Elegir como principal</button><br><br>
       <button  (click)="removeFavs(ciudad)" type="button" class="btn btn-danger">Eliminar</button>
     </div>
-
-    <button (click)="resetFavs()" type="button" class="btn btn-light">Borrar todos</button>
+  </div>
+    <br><br>
+    <button (click)="resetFavs()" type="button" class="btn btn-dark">Borrar todos</button>

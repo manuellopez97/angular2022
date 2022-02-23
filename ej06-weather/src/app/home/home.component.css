@@ -1,0 +1,19 @@
+.main
+{
+  width: 15%;
+  margin-left: 40%;
+  margin-right: auto;
+}
+
+.center{
+  text-align: center;
+}
+
+.carta{
+  border:1px solid black;
+  width: 20%;
+  height: 500%;
+  display: inline-block;
+  margin:1%;
+
+}

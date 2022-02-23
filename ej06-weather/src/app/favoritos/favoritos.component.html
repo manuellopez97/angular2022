@@ -1,19 +1,19 @@
-<h3>No hay datos todavía, inserte una ciudad</h3>
 <p>Inserte una ciudad</p>
-    <div class="input-group input-group-sm mb-3 reducir">
-      <input #ciudad type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  (keyup.enter)="this.getTiempo(ciudad.value)" placeholder="Elche">
-      <button (click)="this.getTiempo(ciudad.value)" type="button" class="btn btn-dark">Enviar</button>
-      </div>
-      <br>
-      <div *ngIf="!getWeather(); else elseBlock"><br>
+<div class="input-group input-group-sm mb-3 reducir">
+  <input #ciudad type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  (keyup.enter)="this.getTiempo(ciudad.value)" placeholder="Elche">
+  <button (click)="this.getTiempo(ciudad.value)" type="button" class="btn btn-dark">Enviar</button>
+</div>
+<br>
+<div *ngIf="!getWeather(); else elseBlock"><br>
+  <h3>No hay datos todavía, inserte una ciudad</h3>
     </div>
 <ng-template #elseBlock><br>
   <p><b>Elige una ciudad:</b></p>
-  <div *ngFor="let ciudad of getWeather()" class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="">
-    <div class="card-body">
+  <div *ngFor="let ciudad of getWeather()" class="card espaciado" style="width: 18rem;">
+    <img src="../../assets/images/icono-tiempo.png" class="card-img-top" alt="">
+    <div class="card-body center">
       <h5 class="card-title"> {{ciudad.name}}</h5>
-      <p class="card-text"> {{ciudad.dt}} </p>
+      <p class="card-text"> {{ciudad.main.temp | grados:ciudad.main.temp }} </p>
       <button (click)="addFavs(ciudad)" type="button" class="btn btn-dark">Añadir a favoritos</button>
     </div>
   </div>

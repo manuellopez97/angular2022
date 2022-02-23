@@ -8,6 +8,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
 import { FavsComponent } from './favs/favs.component';
+import { GradosPipe } from './grados.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FavsComponent } from './favs/favs.component';
     NavBarComponent,
     HomeComponent,
     FavoritosComponent,
-    FavsComponent
+    FavsComponent,
+    GradosPipe
   ],
   imports: [
     BrowserModule,

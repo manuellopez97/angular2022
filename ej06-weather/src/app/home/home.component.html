@@ -1,5 +1,7 @@
- <img src="..." class="card-img-top" alt="">
-  <div class="card-body">
+ <div class="carta" *ngIf="getPrincipal()">
+ <img src="../../assets/images/icono-tiempo.png" class="card-img-top main" alt="">
+  <div class="card-body center">
     <h5 class="card-title"> {{getPrincipal().name}}</h5>
-    <p class="card-text"> {{getPrincipal().dt}} </p>
+    <p class="card-text"> {{getPrincipal().main.temp | grados:getPrincipal().main.temp}}   </p>
   </div>
+</div>

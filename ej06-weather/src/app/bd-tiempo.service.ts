@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BdTiempoService {
-  private urlBase:string = 'http://api.openweathermap.org/data/2.5/find?'
+  private urlBase:string = 'http://api.openweathermap.org/data/2.5/find?q='
   private key:string = '8c5832bf6b14300069d047bd226c38ef'
   private weather:any
   private favoritos = new Array()
@@ -13,7 +13,7 @@ export class BdTiempoService {
   constructor(private http:HttpClient) {}
 
   getTiempo(ciudad:any):any{
-  this.http.get(this.urlBase + 'q='+ciudad+'&appid='+this.key).subscribe(
+  this.http.get(this.urlBase +ciudad+'&appid='+this.key).subscribe(
     (response:any)=>{
        this.weather = response.list
      }

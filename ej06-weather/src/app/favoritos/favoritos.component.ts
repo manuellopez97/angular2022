@@ -21,11 +21,13 @@ export class FavoritosComponent implements OnInit {
   }
 
   getWeather(){
+    console.log(this.bdTiempo.getWeather())
     return this.bdTiempo.getWeather()
   }
 
   addFavs(ciudad:any){
     this.bdTiempo.addFavs(ciudad)
+    alert("Se ha añadido "+ciudad.name+ " a tu lista de favoritos")
   }
 
   }
