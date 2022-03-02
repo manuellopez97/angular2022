@@ -1,0 +1,11 @@
+<input #search (keyup.enter)="setCharacter(search.value) " class="form-control" type="text" placeholder="Introduce el nombre de un personaje" aria-label="default input example">
+<ng-container *ngFor="let character of getCharacters()|filtroName:getCharacter()">
+  <div class="card centrado" style="width: 18rem;">
+    <img src="{{character.img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{character.name}}</h5>
+      <p class="card-text">{{character.status}}</p>
+      <a (click)="addFavs(character)" class="btn btn-primary">Añadir a favorito</a>
+    </div>
+  </div>
+</ng-container>

@@ -41,7 +41,7 @@ export class BdCineService {
 
   setId(id:any){
    this.http.get(this.URI2 + id).subscribe(
-    (response) =>{
+    (response:any) =>{
     this.detalles = response
     }
     )

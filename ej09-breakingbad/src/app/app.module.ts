@@ -8,6 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { CharactersComponent } from './characters/characters.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { Page404Component } from './page404/page404.component';
+import { CharListComponent } from './char-list/char-list.component';
+import { FiltroNamePipe } from './filtro-name.pipe';
+import { ListadoFavsComponent } from './listado-favs/listado-favs.component';
+import { FavsComponent } from './favs/favs.component';
+import { QuoteNamePipe } from './quote-name.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,11 @@ import { Page404Component } from './page404/page404.component';
     CharactersComponent,
     QuotesComponent,
     Page404Component,
+    CharListComponent,
+    FiltroNamePipe,
+    ListadoFavsComponent,
+    FavsComponent,
+    QuoteNamePipe,
 
   ],
   imports: [

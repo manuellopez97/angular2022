@@ -1,1 +1,10 @@
-<p>quotes works!</p>
+<input #search (keyup.enter)="setPatron(search.value) " class="form-control" type="text" placeholder="Introduce el nombre de un personaje" aria-label="default input example">
+<ng-container *ngFor="let quote of getQuote()|quoteName:getPatron()">
+  <div class="card centrado" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{quote.quote}}</h5>
+      <p class="card-text">{{quote.author}}</p>
+      <!-- <a (click)="addFavs(character)" class="btn btn-primary">Añadir a favorito</a> -->
+    </div>
+  </div>
+</ng-container>
