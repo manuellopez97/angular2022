@@ -1,0 +1,21 @@
+
+<h3>El mas barato</h3>
+<table border="1">
+  <tr *ngFor="let coches of datos.coches |mercedes">
+    <td>{{coches.nombre}}</td>
+    <td>{{coches.precio}}</td>
+    <td>{{getFab(coches.fabricante)}}</td>
+    <td>{{getTec(coches.tecnologia)}}</td>
+  </tr>
+</table>
+
+<h3>Mas barato que...(una cifra)</h3>
+<table border="1">
+  <tr *ngFor="let coches of datos.coches |cheaperThan:25000">
+    <td>{{coches.nombre}}</td>
+    <td>{{coches.precio}}</td>
+    <td>{{getFab(coches.fabricante)}}</td>
+    <td>{{getTec(coches.tecnologia)}}</td>
+  </tr>
+</table>
+<router-outlet></router-outlet>

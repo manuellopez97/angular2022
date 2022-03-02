@@ -13,6 +13,7 @@
     <img src="../../assets/images/icono-tiempo.png" class="card-img-top" alt="">
     <div class="card-body center">
       <h5 class="card-title"> {{ciudad.name}}</h5>
+      <p class="card-title"> {{ciudad.sys.country}}</p>
       <p class="card-text"> {{ciudad.main.temp | grados:ciudad.main.temp }} </p>
       <button (click)="addFavs(ciudad)" type="button" class="btn btn-dark">Añadir a favoritos</button>
     </div>

@@ -1,0 +1,10 @@
+<div class="card center" style="width: 18rem;">
+  <a>
+      <img src="{{pelicula.Poster}}" class="card-img-top">
+  </a>
+  <div class="card-body">
+      <p class="card-text">{{pelicula.Title}} ({{pelicula.Year}})</p>
+      <a (click)="setId(pelicula.imdbID)" href="detalles" type="button" class="btn btn-primary">Detalles</a>
+      <button (click)="removeFavs(pelicula)" type="button" class="btn btn-danger">Borrar</button>
+  </div>
+</div>

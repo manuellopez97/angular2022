@@ -2,6 +2,7 @@
     <img src="../../assets/images/icono-tiempo.png" class="card-img-top" alt="">
     <div class="card-body center">
       <h5 class="card-title"> {{ciudad.name}}</h5>
+      <p class="card-title"> {{ciudad.sys.country}}</p>
       <p class="card-text"> {{ciudad.main.temp | grados:ciudad.main.temp}} </p>
       <button (click)="setPrincipal(ciudad)" type="button" class="btn btn-info">Elegir como principal</button><br><br>
       <button  (click)="removeFavs(ciudad)" type="button" class="btn btn-danger">Eliminar</button>
