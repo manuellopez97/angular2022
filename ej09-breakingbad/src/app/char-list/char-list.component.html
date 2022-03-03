@@ -1,4 +1,4 @@
-<input #search (keyup.enter)="setCharacter(search.value) " class="form-control" type="text" placeholder="Introduce el nombre de un personaje" aria-label="default input example">
+<input #search (keyup.enter)="setCharacter(search.value)" class="form-control" type="text" placeholder="Introduce el nombre de un personaje" aria-label="default input example">
 <ng-container *ngFor="let character of getCharacters()|filtroName:getCharacter()">
   <div class="card centrado" style="width: 18rem;">
     <img src="{{character.img}}" class="card-img-top" alt="...">

@@ -12,7 +12,9 @@ export class BaseDatosService {
   private quotes:any
   private favs:any[] = []
   private patron:string = ""
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+    this.favs = JSON.parse(localStorage.getItem("favs") as string)
+   }
 
   getCharacters(){
 
@@ -28,6 +30,7 @@ export class BaseDatosService {
   addFavs(character:any){
     if(!this.favs.includes(character))
     this.favs.push(character)
+    localStorage.setItem("favs",JSON.stringify(this.favs))
   }
 
   getFavs(){
