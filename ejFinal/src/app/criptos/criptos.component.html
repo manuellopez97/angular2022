@@ -1,0 +1,10 @@
+<input #search (keyup.enter)="getCriptosPorId(search.value)" type="text"  placeholder="Busca por iniciales">
+<br>
+<ng-container *ngFor="let cripto of getResultado()">
+  <app-cripto [cripto]="cripto"></app-cripto>
+</ng-container>
+<h3>Las monedas con balance positivo son...</h3>
+<input #prueba (keyup.enter)="setCantidad(prueba.value)" type="text" placeholder="cantidad">
+<ng-container *ngFor="let cripto of getResultado()|cambio:getCantidad()">
+  <app-cripto [cripto]="cripto"></app-cripto>
+</ng-container>

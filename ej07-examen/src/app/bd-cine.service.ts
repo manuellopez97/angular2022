@@ -12,7 +12,10 @@ export class BdCineService {
   private favs:any = []
   private detalles:any = "tt0372784"
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    if(localStorage.getItem("favs"))
+    this.favs = JSON.parse(localStorage.getItem("favs") as any)
+  }
 
   getConsulta(titulo: string){
     this.http.get(this.URI+titulo).subscribe(
@@ -28,6 +31,7 @@ export class BdCineService {
   addFavs(pelicula:any){
     if(!this.favs.includes(pelicula)){
       this.favs.push(pelicula)
+      localStorage.setItem("favs",JSON.stringify(this.favs))
     }
   }
 
